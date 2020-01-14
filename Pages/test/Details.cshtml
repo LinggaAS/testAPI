@@ -1,0 +1,37 @@
+﻿@page
+@model testAPI.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>test</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.test.nama_film)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.test.nama_film)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.test.tahun_rilis)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.test.tahun_rilis)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.test.jumlah_copy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.test.jumlah_copy)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.test.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

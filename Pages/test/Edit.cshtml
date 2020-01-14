@@ -1,0 +1,45 @@
+﻿@page
+@model testAPI.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>test</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="test.Id" />
+            <div class="form-group">
+                <label asp-for="test.nama_film" class="control-label"></label>
+                <input asp-for="test.nama_film" class="form-control" />
+                <span asp-validation-for="test.nama_film" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="test.tahun_rilis" class="control-label"></label>
+                <input asp-for="test.tahun_rilis" class="form-control" />
+                <span asp-validation-for="test.tahun_rilis" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="test.jumlah_copy" class="control-label"></label>
+                <input asp-for="test.jumlah_copy" class="form-control" />
+                <span asp-validation-for="test.jumlah_copy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
